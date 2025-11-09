@@ -21,6 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(DEBUG=(bool, False))
 env.read_env(os.path.join(BASE_DIR, '.env'))
 
+CHAPA_SECRET_KEY = env('CHAPA_SECRET_KEY')
+CHAPA_SANDBOX = env.bool('CHAPA_SANDBOX', default=True)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
